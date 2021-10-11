@@ -8,11 +8,18 @@ function compute()
 
     var years = new Date().getFullYear()+parseInt(years);
 
-    document.getElementById("result").innerHTML= 
-    "If you deposit \<mark\>"+principal+"\</mark>, \<br\>at an interest rate of \<mark\>"+
-    rate+"%\</mark>\<br\>You will receive an amount of \<mark\>"+
-    interest+"\</mark>,\<br\>in the year \<mark\>"+years+"\</mark>.\<br\>"
+    if (principal > 0) {
+        document.getElementById("result").innerHTML= 
+        "If you deposit \<mark\>"+principal+"\</mark>, \<br\>at an interest rate of \<mark\>"+
+        rate+"%\</mark>\<br\>You will receive an amount of \<mark\>"+
+        interest+"\</mark>,\<br\>in the year \<mark\>"+years+"\</mark>.\<br\>"
+    }else if (principal <= 0) {
+        alert("enter a positive number")
+        document.getElementById("principal").focus()
+    }
 }
+
+    
 
 function updateRate() 
     {
